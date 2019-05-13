@@ -20,7 +20,7 @@ namespace WindowsFormsApp3
     public partial class Bookform : Form
     {
         ArrayList Title = new ArrayList();
-        ArrayList Author = new ArrayList();
+        ArrayList authori = new ArrayList();
         ArrayList ISBN = new ArrayList();
         ArrayList Price = new ArrayList();
         ArrayList id = new ArrayList();
@@ -33,7 +33,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
             MySqlConnection Con = new MySqlConnection(CS);
             MySqlCommand SelectCommand = new MySqlCommand("SELECT * FROM books", Con);
-            invinsibletb.Visible = false;
+            idthing.Visible = false;
 
             try
             {
@@ -79,7 +79,7 @@ namespace WindowsFormsApp3
             Title_box.Text = null;
             textBox1.Text = null;
             Author_box.Text = null;
-            textBox2.Text = null;
+            pricebox.Text = null;
             save = 1;
         }
 
@@ -97,7 +97,7 @@ namespace WindowsFormsApp3
             DialogResult Check = MessageBox.Show("Can you confirm your cancelation?", "Cancelation", MessageBoxButtons.YesNo);
             if (Check == DialogResult.Yes)
             {
-                int id = int.Parse(invinsibletb.Text) - 1;
+                int id = int.Parse(idthing.Text) - 1;
 
                 foreach (TextBox textBox in Controls.OfType<TextBox>())
                     textBox.Text = "";
@@ -134,9 +134,9 @@ namespace WindowsFormsApp3
 
                     Title_box.Text = Title[i].ToString();
                     textBox1.Text = ISBN[i].ToString();
-                    Author_box.Text = Author[i].ToString();
-                    textBox2.Text = Price[i].ToString();
-                    invinsibletb.Text = id[i].ToString();
+                    Author_box.Text = authori[i].ToString();
+                    pricebox.Text = Price[i].ToString();
+                    idthing.Text = id[i].ToString();
                 }
             }
 
@@ -148,7 +148,7 @@ namespace WindowsFormsApp3
             if (save == 1)
             {
 
-                if (Author_box.Text == "" || Title_box.Text == "" || textBox1.Text == "" || textBox2.Text == "") MessageBox.Show("incorrect input");
+                if (Author_box.Text == "" || Title_box.Text == "" || textBox1.Text == "" || pricebox.Text == "") MessageBox.Show("incorrect input");
                 else
                 {
 
@@ -156,7 +156,7 @@ namespace WindowsFormsApp3
                     string author = Author_box.Text;
                     string isbn = textBox1.Text;
                     //string Id = invinsibletb.Text;
-                    string price = pricetb.Text;
+                    string price = pricebox.Text;
                     MySqlConnection Con = new MySqlConnection(CS);
                     MySqlCommand InserCommand = new MySqlCommand("INSERT INTO books (title, author, isbn, price) VALUES ('" + title + "','" + author + "','" + isbn + "','" + price + "');", Con);
                     MySqlDataReader MyReader;
@@ -170,23 +170,23 @@ namespace WindowsFormsApp3
                         MessageBox.Show("You action has been saved!");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
-                    Author.Add(author);
+                    authori.Add(author);
                     Title.Add(title);
                     ISBN.Add(isbn);
                     Price.Add(price);
                     Title_box.Text = null;
                     Author_box.Text = null;
                     textBox1.Text = null;
-                    textBox2.Text = null;
+                    pricebox.Text = null;
                 }
             }
             else
             {
 
-                int ind = int.Parse(invinsibletb.Text) - 1;
+                int ind = int.Parse(idthing.Text) - 1;
 
 
-                if (Author_box.Text == Author[ind].ToString() && Title_box.Text == Title[ind].ToString() && textBox1.Text == ISBN[ind].ToString() && textBox2.Text == Price[ind].ToString()) MessageBox.Show("not updated");
+                if (Author_box.Text == authori[ind].ToString() && Title_box.Text == Title[ind].ToString() && textBox1.Text == ISBN[ind].ToString() && pricebox.Text == Price[ind].ToString()) MessageBox.Show("not updated");
 
 
 
@@ -196,7 +196,7 @@ namespace WindowsFormsApp3
                     MySqlConnection Con = new MySqlConnection(CS);
 
 
-                    MySqlCommand UpdateCommand = new MySqlCommand("UPDATE books SET title = '" + titletb.Text.ToString() + "', author = '" + authortb.Text.ToString() + "', isbn = '" + isbntb.Text.ToString() + "', price = '" + pricetb.Text.ToString() + "' where id = '" + invinsibletb.Text + "' ; ", Con);
+                    MySqlCommand UpdateCommand = new MySqlCommand("UPDATE books SET title = '" + titletb.Text.ToString() + "', author = '" + authortb.Text.ToString() + "', isbn = '" + isbntb.Text.ToString() + "', price = '" + pricetb.Text.ToString() + "' where id = '" + idthing.Text + "' ; ", Con);
                     MySqlDataReader myReader;
 
                     try
@@ -213,13 +213,13 @@ namespace WindowsFormsApp3
 
 
                         Title[ind] = Title_box.Text;
-                        Author[ind] = Author_box.Text;
+                        authori[ind] = Author_box.Text;
                         ISBN[ind] = textBox1.Text;
-                        Price[ind] = textBox2.Text;
+                        Price[ind] = pricebox.Text;
                         Title_box.Text = null;
                         Author_box.Text = null;
                         textBox1.Text = null;
-                        textBox2.Text = null;
+                        pricebox.Text = null;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
 
