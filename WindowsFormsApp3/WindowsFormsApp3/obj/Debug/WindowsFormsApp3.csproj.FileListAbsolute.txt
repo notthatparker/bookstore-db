@@ -10,3 +10,5 @@ C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsF
 C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
 C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
 C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.formMenu.resources
+C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Orders.resources
+C:\Users\niktb\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Order_Details.resources

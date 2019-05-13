@@ -53,6 +53,7 @@
             this.Back_btn.TabIndex = 0;
             this.Back_btn.Text = "Back";
             this.Back_btn.UseVisualStyleBackColor = false;
+            this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
             // 
             // titleLab
             // 
@@ -79,6 +80,7 @@
             this.Title_box.Name = "Title_box";
             this.Title_box.Size = new System.Drawing.Size(647, 22);
             this.Title_box.TabIndex = 3;
+            this.Title_box.TextChanged += new System.EventHandler(this.Title_box_TextChanged);
             // 
             // Author_box
             // 
@@ -107,6 +109,7 @@
             this.save_btn.TabIndex = 6;
             this.save_btn.Text = "Save";
             this.save_btn.UseVisualStyleBackColor = false;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // Cancel_btn
             // 
@@ -117,6 +120,7 @@
             this.Cancel_btn.TabIndex = 7;
             this.Cancel_btn.Text = "Cancel";
             this.Cancel_btn.UseVisualStyleBackColor = false;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // textBox1
             // 
@@ -167,6 +171,7 @@
             this.comboBox1.Size = new System.Drawing.Size(281, 24);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.Text = "Edit an Existing Book";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Bookform
             // 

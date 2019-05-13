@@ -35,11 +35,19 @@ namespace WindowsFormsApp3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Bookform frm2 = new Bookform();
 
+            frm2.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            this.Hide();
+            Orders frm2 = new Orders();
+
+            frm2.Show();
 
         }
     }

@@ -31,24 +31,24 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.priceLab = new System.Windows.Forms.Label();
             this.isbnLab = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.zip_box = new System.Windows.Forms.TextBox();
+            this.state_box = new System.Windows.Forms.TextBox();
             this.Cancel_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.NewCust_btn = new System.Windows.Forms.Button();
-            this.Author_box = new System.Windows.Forms.TextBox();
-            this.Title_box = new System.Windows.Forms.TextBox();
+            this.city_box = new System.Windows.Forms.TextBox();
+            this.first_namebox = new System.Windows.Forms.TextBox();
             this.Author = new System.Windows.Forms.Label();
             this.FnameLab = new System.Windows.Forms.Label();
             this.Back_btn = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.last_namebox = new System.Windows.Forms.TextBox();
             this.LnameLab = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.address_box = new System.Windows.Forms.TextBox();
             this.addressLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.phone_box = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.email_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -80,19 +80,19 @@
             this.isbnLab.Text = "State";
             this.isbnLab.Click += new System.EventHandler(this.isbnLab_Click);
             // 
-            // textBox2
+            // zip_box
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(338, 22);
-            this.textBox2.TabIndex = 23;
+            this.zip_box.Location = new System.Drawing.Point(110, 231);
+            this.zip_box.Name = "zip_box";
+            this.zip_box.Size = new System.Drawing.Size(338, 22);
+            this.zip_box.TabIndex = 23;
             // 
-            // textBox1
+            // state_box
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(473, 22);
-            this.textBox1.TabIndex = 22;
+            this.state_box.Location = new System.Drawing.Point(110, 179);
+            this.state_box.Name = "state_box";
+            this.state_box.Size = new System.Drawing.Size(473, 22);
+            this.state_box.TabIndex = 22;
             // 
             // Cancel_btn
             // 
@@ -103,6 +103,7 @@
             this.Cancel_btn.TabIndex = 21;
             this.Cancel_btn.Text = "Cancel";
             this.Cancel_btn.UseVisualStyleBackColor = false;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // save_btn
             // 
@@ -113,6 +114,7 @@
             this.save_btn.TabIndex = 20;
             this.save_btn.Text = "Save";
             this.save_btn.UseVisualStyleBackColor = false;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // NewCust_btn
             // 
@@ -123,20 +125,21 @@
             this.NewCust_btn.TabIndex = 19;
             this.NewCust_btn.Text = "New Customer";
             this.NewCust_btn.UseVisualStyleBackColor = false;
+            this.NewCust_btn.Click += new System.EventHandler(this.NewCust_btn_Click);
             // 
-            // Author_box
+            // city_box
             // 
-            this.Author_box.Location = new System.Drawing.Point(110, 137);
-            this.Author_box.Name = "Author_box";
-            this.Author_box.Size = new System.Drawing.Size(473, 22);
-            this.Author_box.TabIndex = 18;
+            this.city_box.Location = new System.Drawing.Point(110, 137);
+            this.city_box.Name = "city_box";
+            this.city_box.Size = new System.Drawing.Size(473, 22);
+            this.city_box.TabIndex = 18;
             // 
-            // Title_box
+            // first_namebox
             // 
-            this.Title_box.Location = new System.Drawing.Point(110, 53);
-            this.Title_box.Name = "Title_box";
-            this.Title_box.Size = new System.Drawing.Size(174, 22);
-            this.Title_box.TabIndex = 17;
+            this.first_namebox.Location = new System.Drawing.Point(110, 53);
+            this.first_namebox.Name = "first_namebox";
+            this.first_namebox.Size = new System.Drawing.Size(174, 22);
+            this.first_namebox.TabIndex = 17;
             // 
             // Author
             // 
@@ -167,12 +170,12 @@
             this.Back_btn.UseVisualStyleBackColor = false;
             this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
             // 
-            // textBox3
+            // last_namebox
             // 
-            this.textBox3.Location = new System.Drawing.Point(409, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 22);
-            this.textBox3.TabIndex = 28;
+            this.last_namebox.Location = new System.Drawing.Point(409, 53);
+            this.last_namebox.Name = "last_namebox";
+            this.last_namebox.Size = new System.Drawing.Size(174, 22);
+            this.last_namebox.TabIndex = 28;
             // 
             // LnameLab
             // 
@@ -183,12 +186,12 @@
             this.LnameLab.TabIndex = 27;
             this.LnameLab.Text = "Last Name";
             // 
-            // textBox4
+            // address_box
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 95);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(473, 22);
-            this.textBox4.TabIndex = 30;
+            this.address_box.Location = new System.Drawing.Point(110, 95);
+            this.address_box.Name = "address_box";
+            this.address_box.Size = new System.Drawing.Size(473, 22);
+            this.address_box.TabIndex = 30;
             // 
             // addressLab
             // 
@@ -208,12 +211,12 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Home phone";
             // 
-            // textBox5
+            // phone_box
             // 
-            this.textBox5.Location = new System.Drawing.Point(110, 275);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(338, 22);
-            this.textBox5.TabIndex = 31;
+            this.phone_box.Location = new System.Drawing.Point(110, 275);
+            this.phone_box.Name = "phone_box";
+            this.phone_box.Size = new System.Drawing.Size(338, 22);
+            this.phone_box.TabIndex = 31;
             // 
             // label2
             // 
@@ -224,12 +227,12 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Email";
             // 
-            // textBox6
+            // email_box
             // 
-            this.textBox6.Location = new System.Drawing.Point(110, 313);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(338, 22);
-            this.textBox6.TabIndex = 33;
+            this.email_box.Location = new System.Drawing.Point(110, 313);
+            this.email_box.Name = "email_box";
+            this.email_box.Size = new System.Drawing.Size(338, 22);
+            this.email_box.TabIndex = 33;
             // 
             // Customers
             // 
@@ -237,28 +240,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 365);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.email_box);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.phone_box);
+            this.Controls.Add(this.address_box);
             this.Controls.Add(this.addressLab);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.last_namebox);
             this.Controls.Add(this.LnameLab);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.priceLab);
             this.Controls.Add(this.isbnLab);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.zip_box);
+            this.Controls.Add(this.state_box);
             this.Controls.Add(this.Cancel_btn);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.NewCust_btn);
-            this.Controls.Add(this.Author_box);
-            this.Controls.Add(this.Title_box);
+            this.Controls.Add(this.city_box);
+            this.Controls.Add(this.first_namebox);
             this.Controls.Add(this.Author);
             this.Controls.Add(this.FnameLab);
             this.Controls.Add(this.Back_btn);
             this.Name = "Customers";
             this.Text = "Customers";
+            this.Load += new System.EventHandler(this.Customers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,23 +273,23 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label priceLab;
         private System.Windows.Forms.Label isbnLab;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox zip_box;
+        private System.Windows.Forms.TextBox state_box;
         private System.Windows.Forms.Button Cancel_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button NewCust_btn;
-        private System.Windows.Forms.TextBox Author_box;
-        private System.Windows.Forms.TextBox Title_box;
+        private System.Windows.Forms.TextBox city_box;
+        private System.Windows.Forms.TextBox first_namebox;
         private System.Windows.Forms.Label Author;
         private System.Windows.Forms.Label FnameLab;
         private System.Windows.Forms.Button Back_btn;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox last_namebox;
         private System.Windows.Forms.Label LnameLab;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox address_box;
         private System.Windows.Forms.Label addressLab;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox phone_box;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox email_box;
     }
 }

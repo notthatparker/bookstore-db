@@ -29,98 +29,218 @@
         private void InitializeComponent()
         {
             this.backbtn_1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.idbox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.subbox = new System.Windows.Forms.TextBox();
+            this.taxbox = new System.Windows.Forms.TextBox();
+            this.totalbox = new System.Windows.Forms.TextBox();
+            this.custbox = new System.Windows.Forms.ComboBox();
+            this.bookbox = new System.Windows.Forms.ComboBox();
+            this.authrobox = new System.Windows.Forms.TextBox();
+            this.isbnbox = new System.Windows.Forms.TextBox();
+            this.pricebox = new System.Windows.Forms.TextBox();
+            this.quantbox = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LineTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.confirmbutton = new System.Windows.Forms.Button();
+            this.cancelbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // backbtn_1
             // 
-            this.backbtn_1.Location = new System.Drawing.Point(644, 26);
+            this.backbtn_1.Location = new System.Drawing.Point(668, 26);
             this.backbtn_1.Name = "backbtn_1";
             this.backbtn_1.Size = new System.Drawing.Size(120, 48);
             this.backbtn_1.TabIndex = 0;
             this.backbtn_1.Text = "BACK";
             this.backbtn_1.UseVisualStyleBackColor = true;
+            this.backbtn_1.Click += new System.EventHandler(this.backbtn_1_Click);
             // 
-            // button2
+            // subbox
             // 
-            this.button2.Location = new System.Drawing.Point(644, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.subbox.Location = new System.Drawing.Point(261, 352);
+            this.subbox.Name = "subbox";
+            this.subbox.Size = new System.Drawing.Size(131, 22);
+            this.subbox.TabIndex = 5;
+            this.subbox.Text = "sub total";
             // 
-            // button3
+            // taxbox
             // 
-            this.button3.Location = new System.Drawing.Point(644, 156);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 48);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.taxbox.Location = new System.Drawing.Point(431, 352);
+            this.taxbox.Name = "taxbox";
+            this.taxbox.Size = new System.Drawing.Size(140, 22);
+            this.taxbox.TabIndex = 6;
+            this.taxbox.Text = "tax";
             // 
-            // idbox
+            // totalbox
             // 
-            this.idbox.Location = new System.Drawing.Point(43, 52);
-            this.idbox.Name = "idbox";
-            this.idbox.Size = new System.Drawing.Size(255, 22);
-            this.idbox.TabIndex = 3;
-            this.idbox.Text = "Enter Customer id";
+            this.totalbox.Location = new System.Drawing.Point(600, 352);
+            this.totalbox.Name = "totalbox";
+            this.totalbox.Size = new System.Drawing.Size(131, 22);
+            this.totalbox.TabIndex = 7;
+            this.totalbox.Text = "Total";
             // 
-            // textBox2
+            // custbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(255, 22);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "order id";
+            this.custbox.FormattingEnabled = true;
+            this.custbox.Location = new System.Drawing.Point(12, 39);
+            this.custbox.Name = "custbox";
+            this.custbox.Size = new System.Drawing.Size(226, 24);
+            this.custbox.TabIndex = 8;
+            this.custbox.Text = "Customer ID";
+            this.custbox.SelectedIndexChanged += new System.EventHandler(this.custbox_SelectedIndexChanged);
             // 
-            // textBox3
+            // bookbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(43, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(255, 22);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "sub total";
+            this.bookbox.FormattingEnabled = true;
+            this.bookbox.Location = new System.Drawing.Point(12, 90);
+            this.bookbox.Name = "bookbox";
+            this.bookbox.Size = new System.Drawing.Size(226, 24);
+            this.bookbox.TabIndex = 9;
+            this.bookbox.Text = "Book";
+            this.bookbox.SelectedIndexChanged += new System.EventHandler(this.bookbox_SelectedIndexChanged);
             // 
-            // textBox4
+            // authrobox
             // 
-            this.textBox4.Location = new System.Drawing.Point(43, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(255, 22);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.Text = "tax";
+            this.authrobox.Enabled = false;
+            this.authrobox.Location = new System.Drawing.Point(12, 136);
+            this.authrobox.Name = "authrobox";
+            this.authrobox.Size = new System.Drawing.Size(226, 22);
+            this.authrobox.TabIndex = 10;
+            this.authrobox.Text = "Author";
             // 
-            // textBox1
+            // isbnbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 302);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 22);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "tax";
+            this.isbnbox.Enabled = false;
+            this.isbnbox.Location = new System.Drawing.Point(12, 182);
+            this.isbnbox.Name = "isbnbox";
+            this.isbnbox.Size = new System.Drawing.Size(226, 22);
+            this.isbnbox.TabIndex = 11;
+            this.isbnbox.Text = "ISBN";
+            // 
+            // pricebox
+            // 
+            this.pricebox.Enabled = false;
+            this.pricebox.Location = new System.Drawing.Point(12, 224);
+            this.pricebox.Name = "pricebox";
+            this.pricebox.Size = new System.Drawing.Size(226, 22);
+            this.pricebox.TabIndex = 12;
+            this.pricebox.Text = "Price";
+            // 
+            // quantbox
+            // 
+            this.quantbox.Location = new System.Drawing.Point(12, 269);
+            this.quantbox.Name = "quantbox";
+            this.quantbox.Size = new System.Drawing.Size(226, 22);
+            this.quantbox.TabIndex = 13;
+            this.quantbox.Text = "Quantity";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Title,
+            this.Price,
+            this.QTY,
+            this.LineTotal});
+            this.dataGridView1.Location = new System.Drawing.Point(261, 90);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(443, 242);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            // 
+            // QTY
+            // 
+            this.QTY.HeaderText = "QTY";
+            this.QTY.Name = "QTY";
+            // 
+            // LineTotal
+            // 
+            this.LineTotal.HeaderText = "Line Total";
+            this.LineTotal.Name = "LineTotal";
+            // 
+            // confirmbutton
+            // 
+            this.confirmbutton.BackColor = System.Drawing.Color.Chartreuse;
+            this.confirmbutton.Location = new System.Drawing.Point(261, 396);
+            this.confirmbutton.Name = "confirmbutton";
+            this.confirmbutton.Size = new System.Drawing.Size(142, 28);
+            this.confirmbutton.TabIndex = 15;
+            this.confirmbutton.Text = "Confirm";
+            this.confirmbutton.UseVisualStyleBackColor = false;
+            this.confirmbutton.Click += new System.EventHandler(this.confirmbutton_Click);
+            // 
+            // cancelbutton
+            // 
+            this.cancelbutton.BackColor = System.Drawing.Color.DarkRed;
+            this.cancelbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelbutton.Location = new System.Drawing.Point(429, 396);
+            this.cancelbutton.Name = "cancelbutton";
+            this.cancelbutton.Size = new System.Drawing.Size(142, 28);
+            this.cancelbutton.TabIndex = 16;
+            this.cancelbutton.Text = "Cancel";
+            this.cancelbutton.UseVisualStyleBackColor = false;
+            this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(12, 309);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(226, 23);
+            this.add.TabIndex = 18;
+            this.add.Text = "add";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.idbox);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelbutton);
+            this.Controls.Add(this.confirmbutton);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.quantbox);
+            this.Controls.Add(this.pricebox);
+            this.Controls.Add(this.isbnbox);
+            this.Controls.Add(this.authrobox);
+            this.Controls.Add(this.bookbox);
+            this.Controls.Add(this.custbox);
+            this.Controls.Add(this.totalbox);
+            this.Controls.Add(this.taxbox);
+            this.Controls.Add(this.subbox);
             this.Controls.Add(this.backbtn_1);
             this.Name = "Orders";
-            this.Text = "v ";
+            this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Orders_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,12 +249,23 @@
         #endregion
 
         private System.Windows.Forms.Button backbtn_1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox idbox;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox subbox;
+        private System.Windows.Forms.TextBox taxbox;
+        private System.Windows.Forms.TextBox totalbox;
+        private System.Windows.Forms.ComboBox custbox;
+        private System.Windows.Forms.ComboBox bookbox;
+        private System.Windows.Forms.TextBox authrobox;
+        private System.Windows.Forms.TextBox isbnbox;
+        private System.Windows.Forms.TextBox pricebox;
+        private System.Windows.Forms.TextBox quantbox;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button confirmbutton;
+        private System.Windows.Forms.Button cancelbutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LineTotal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button add;
     }
 }
