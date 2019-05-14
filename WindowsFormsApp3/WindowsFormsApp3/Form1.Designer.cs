@@ -192,6 +192,7 @@
             this.idthing.Name = "idthing";
             this.idthing.Size = new System.Drawing.Size(100, 20);
             this.idthing.TabIndex = 16;
+            this.idthing.Visible = false;
             // 
             // Bookform
             // 

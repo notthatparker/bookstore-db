@@ -23,8 +23,7 @@ namespace WindowsFormsApp3
         public Orders()
         {
             InitializeComponent();
-         //   customer_id.Visible = false;
-         //   book_id.Visible = false;
+        
             MySqlConnection Con = new MySqlConnection(CS);
             MySqlCommand SelectCommand = new MySqlCommand("SELECT * FROM books", Con);
             MySqlConnection Con1 = new MySqlConnection(CS);
