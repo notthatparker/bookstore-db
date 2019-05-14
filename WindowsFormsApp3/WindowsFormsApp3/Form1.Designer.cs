@@ -30,12 +30,12 @@
         {
             this.Back_btn = new System.Windows.Forms.Button();
             this.titleLab = new System.Windows.Forms.Label();
-            this.Title_box = new System.Windows.Forms.TextBox();
+            this.sataurisbbox = new System.Windows.Forms.TextBox();
             this.Author_box = new System.Windows.Forms.TextBox();
             this.NewBook_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.Cancel_btn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.box1 = new System.Windows.Forms.TextBox();
             this.pricebox = new System.Windows.Forms.TextBox();
             this.isbnLab = new System.Windows.Forms.Label();
             this.priceLab = new System.Windows.Forms.Label();
@@ -70,12 +70,12 @@
             // 
             // Title_box
             // 
-            this.Title_box.Location = new System.Drawing.Point(65, 68);
-            this.Title_box.Margin = new System.Windows.Forms.Padding(2);
-            this.Title_box.Name = "Title_box";
-            this.Title_box.Size = new System.Drawing.Size(486, 20);
-            this.Title_box.TabIndex = 3;
-            this.Title_box.TextChanged += new System.EventHandler(this.Title_box_TextChanged);
+            this.sataurisbbox.Location = new System.Drawing.Point(65, 68);
+            this.sataurisbbox.Margin = new System.Windows.Forms.Padding(2);
+            this.sataurisbbox.Name = "Title_box";
+            this.sataurisbbox.Size = new System.Drawing.Size(486, 20);
+            this.sataurisbbox.TabIndex = 3;
+            this.sataurisbbox.TextChanged += new System.EventHandler(this.Title_box_TextChanged);
             // 
             // Author_box
             // 
@@ -123,11 +123,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 136);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 20);
-            this.textBox1.TabIndex = 8;
+            this.box1.Location = new System.Drawing.Point(65, 136);
+            this.box1.Margin = new System.Windows.Forms.Padding(2);
+            this.box1.Name = "textBox1";
+            this.box1.Size = new System.Drawing.Size(356, 20);
+            this.box1.TabIndex = 8;
             // 
             // pricebox
             // 
@@ -207,12 +207,12 @@
             this.Controls.Add(this.priceLab);
             this.Controls.Add(this.isbnLab);
             this.Controls.Add(this.pricebox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.box1);
             this.Controls.Add(this.Cancel_btn);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.NewBook_btn);
             this.Controls.Add(this.Author_box);
-            this.Controls.Add(this.Title_box);
+            this.Controls.Add(this.sataurisbbox);
             this.Controls.Add(this.titleLab);
             this.Controls.Add(this.Back_btn);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -229,12 +229,12 @@
         private System.Windows.Forms.Button Back_btn;
         private System.Windows.Forms.Label titleLab;
         private System.Windows.Forms.Label Author;
-        private System.Windows.Forms.TextBox Title_box;
+        private System.Windows.Forms.TextBox sataurisbbox;
         private System.Windows.Forms.TextBox Author_box;
         private System.Windows.Forms.Button NewBook_btn;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button Cancel_btn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox box1;
         private System.Windows.Forms.TextBox pricebox;
         private System.Windows.Forms.Label isbnLab;
         private System.Windows.Forms.Label priceLab;

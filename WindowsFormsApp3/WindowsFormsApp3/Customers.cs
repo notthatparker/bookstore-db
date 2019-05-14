@@ -39,7 +39,7 @@ namespace WindowsFormsApp3
             Reset_increment();
             MySqlConnection Con = new MySqlConnection(CS);
             MySqlCommand SelectCommand = new MySqlCommand("SELECT * FROM customer", Con);
-            invinsibletb.Visible = false;
+            idthing.Visible = false;
             try
             {
                 Con.Open();
@@ -142,10 +142,10 @@ namespace WindowsFormsApp3
                 textBox.Text = "";
 
 
-            const string alertmessage = "Good Luck";//because nothing was ever found 
-            const string titletext = "Hello We canceled it";
+            const string alerttext = "done";//because nothing was ever found 
+            const string titler = "iTS DONE ITS DESTROYED";
 
-            var messageboxer = MessageBox.Show(titletext, alertmessage, MessageBoxButtons.OKCancel);
+            var messageboxer = MessageBox.Show(titler, alerttext, MessageBoxButtons.OKCancel);
 
 
 
@@ -199,12 +199,12 @@ namespace WindowsFormsApp3
 
                     MySqlConnection Con = new MySqlConnection(CS);
                     MySqlCommand InserCommand = new MySqlCommand("INSERT INTO customer (lastname, firstname, address,city, states, zip, phone, email ) VALUES ('" + lastname + "','" + firstname + "','" + address + "','" + city + "','" + states + "','" + zip + "','" + phone + "','" + mail + "');", Con);
-                    MySqlDataReader MyReader;
+                    MySqlDataReader parser;
                     try
                     {
                         Con.Open();
-                        MyReader = InserCommand.ExecuteReader();
-                        while (MyReader.Read())
+                        parser = InserCommand.ExecuteReader();
+                        while (parser.Read())
                         {
                         }
                         MessageBox.Show("You action has been saved!");
@@ -227,18 +227,18 @@ namespace WindowsFormsApp3
                         phone_box.Text = null;
                         zip_box.Text = null;
                         email_box.Text = null;
-                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to save this data?", "Save", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Hey Are u totally sure about this ?", "KEEP", MessageBoxButtons.YesNoCancel);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            MessageBox.Show("your changes was Saved");
+                            MessageBox.Show("SO ITS SAFE AND SOUND ^_^");
 
                         }
 
-                        else if (dialogResult == DialogResult.No)
+                        else if (dialogResult == DialogResult.No || dialogResult == DialogResult.Cancel)
                         {
                             return;
                         }
-                        while (MyReader.Read())
+                        while (parser.Read())
                         {
                         }
 
@@ -255,27 +255,27 @@ namespace WindowsFormsApp3
             else
             {
 
-                int ind = int.Parse(invinsibletb.Text) - 1;
+                int ind = int.Parse(idthing.Text) - 1;
                 MessageBox.Show(ind.ToString());
                 if (
-                    first_namebox.Text == FirstName[int.Parse(invinsibletb.Text)].ToString()
-                     && last_namebox.Text == FirstName[int.Parse(invinsibletb.Text)].ToString()
-                     && address_box.Text == Address[int.Parse(invinsibletb.Text)].ToString()
-                     && city_box.Text == City[int.Parse(invinsibletb.Text)].ToString()
-                     && state_box.Text == States[int.Parse(invinsibletb.Text)].ToString()
-                     && zip_box.Text == Zip[int.Parse(invinsibletb.Text)].ToString()
-                     && phone_box.Text == Phone[int.Parse(invinsibletb.Text)].ToString()
-                     && email_box.Text == Email[int.Parse(invinsibletb.Text)].ToString()
+                    first_namebox.Text == FirstName[int.Parse(idthing.Text)].ToString()
+                     && last_namebox.Text == FirstName[int.Parse(idthing.Text)].ToString()
+                     && address_box.Text == Address[int.Parse(idthing.Text)].ToString()
+                     && city_box.Text == City[int.Parse(idthing.Text)].ToString()
+                     && state_box.Text == States[int.Parse(idthing.Text)].ToString()
+                     && zip_box.Text == Zip[int.Parse(idthing.Text)].ToString()
+                     && phone_box.Text == Phone[int.Parse(idthing.Text)].ToString()
+                     && email_box.Text == Email[int.Parse(idthing.Text)].ToString()
                    )
 
-                    MessageBox.Show("You have not updated!");
+                    MessageBox.Show("Let Me Check ...Yea no update sorry");
 
                 else
                 {
                     MySqlConnection Con = new MySqlConnection(CS);
 
 
-                    MySqlCommand UpdateCommand = new MySqlCommand("UPDATE customer SET firstname='" + firstnametb.Text.ToString() + "', lastname='" + lastnametb.Text.ToString() + "', address='" + addresstb.Text.ToString() + "', city='" + citytb.Text.ToString() + "', states ='" + statestb.Text.ToString() + "', zip='" + ziptb.Text.ToString() + "', phone ='" + phonetb.Text.ToString() + "', email='" + mailtb.Text.ToString() + "' where id= '" + invinsibletb.Text + "' ;", Con);
+                    MySqlCommand UpdateCommand = new MySqlCommand("UPDATE customer SET firstname='" + firstnametb.Text.ToString() + "', lastname='" + lastnametb.Text.ToString() + "', address='" + addresstb.Text.ToString() + "', city='" + citytb.Text.ToString() + "', states ='" + statestb.Text.ToString() + "', zip='" + ziptb.Text.ToString() + "', phone ='" + phonetb.Text.ToString() + "', email='" + mailtb.Text.ToString() + "' where id= '" + idthing.Text + "' ;", Con);
                     MySqlDataReader myReader;
                     try
                     {
@@ -283,7 +283,7 @@ namespace WindowsFormsApp3
                         myReader = UpdateCommand.ExecuteReader();
 
 
-                        MessageBox.Show("Your actions have been saved!");
+                        MessageBox.Show("ITs SAfe IN SOUND");
                         while (myReader.Read())
                         {
 

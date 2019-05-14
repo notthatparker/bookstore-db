@@ -19,19 +19,19 @@ namespace WindowsFormsApp3
 {
     public partial class Bookform : Form
     {
-        ArrayList Title = new ArrayList();
-        ArrayList authori = new ArrayList();
-        ArrayList ISBN = new ArrayList();
-        ArrayList Price = new ArrayList();
+        ArrayList satauri = new ArrayList();
+        ArrayList avtori = new ArrayList();
+        ArrayList codiwign = new ArrayList();
+        ArrayList fasi = new ArrayList();
         ArrayList id = new ArrayList();
 
         int save = 0;
-        string CS = "datasource=127.0.0.1;port=3306;username=root;password=;database=book";
+        string library = "datasource=127.0.0.1;port=3306;username=root;password=;database=book";
 
         public Bookform()
         {
             InitializeComponent();
-            MySqlConnection Con = new MySqlConnection(CS);
+            MySqlConnection Con = new MySqlConnection(library);
             MySqlCommand SelectCommand = new MySqlCommand("SELECT * FROM books", Con);
             idthing.Visible = false;
 
@@ -45,11 +45,11 @@ namespace WindowsFormsApp3
                     while (myReader.Read())
                     {
                         Author.Add(myReader.GetString("author"));
-                        ISBN.Add(myReader.GetString("isbn"));
-                        Price.Add(myReader.GetString("price"));
-                        Title.Add(myReader.GetString("title"));
+                        codiwign.Add(myReader.GetString("isbn"));
+                        fasi.Add(myReader.GetString("price"));
+                        satauri.Add(myReader.GetString("title"));
                         id.Add(myReader.GetString("id"));
-                        drop2.Items.Add(myReader.GetString("title"));
+                        comboBox1.Items.Add(myReader.GetString("title"));
 
                     }
 
@@ -76,8 +76,8 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             comboBox1.Enabled = false;
-            Title_box.Text = null;
-            textBox1.Text = null;
+            sataurisbbox.Text = null;
+            box1.Text = null;
             Author_box.Text = null;
             pricebox.Text = null;
             save = 1;
@@ -132,10 +132,10 @@ namespace WindowsFormsApp3
                 if (comboBox1.SelectedIndex == i)
                 {
 
-                    Title_box.Text = Title[i].ToString();
-                    textBox1.Text = ISBN[i].ToString();
-                    Author_box.Text = authori[i].ToString();
-                    pricebox.Text = Price[i].ToString();
+                    sataurisbbox.Text = satauri[i].ToString();
+                    box1.Text = codiwign[i].ToString();
+                    Author_box.Text = avtori[i].ToString();
+                    pricebox.Text = fasi[i].ToString();
                     idthing.Text = id[i].ToString();
                 }
             }
@@ -148,16 +148,15 @@ namespace WindowsFormsApp3
             if (save == 1)
             {
 
-                if (Author_box.Text == "" || Title_box.Text == "" || textBox1.Text == "" || pricebox.Text == "") MessageBox.Show("incorrect input");
+                if ((Author_box.Text == "") ||( sataurisbbox.Text == "") || (box1.Text == "") ||( pricebox.Text == ""))
+                    MessageBox.Show("Dear sadly u havent inputed anything *_*");
                 else
-                {
-
-                    string title = Title_box.Text;
+                {    string title = sataurisbbox.Text;
                     string author = Author_box.Text;
-                    string isbn = textBox1.Text;
+                    string isbn = box1.Text;
                     //string Id = invinsibletb.Text;
                     string price = pricebox.Text;
-                    MySqlConnection Con = new MySqlConnection(CS);
+                    MySqlConnection Con = new MySqlConnection(library);
                     MySqlCommand InserCommand = new MySqlCommand("INSERT INTO books (title, author, isbn, price) VALUES ('" + title + "','" + author + "','" + isbn + "','" + price + "');", Con);
                     MySqlDataReader MyReader;
                     try
@@ -170,55 +169,43 @@ namespace WindowsFormsApp3
                         MessageBox.Show("You action has been saved!");
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
-                    authori.Add(author);
-                    Title.Add(title);
-                    ISBN.Add(isbn);
-                    Price.Add(price);
-                    Title_box.Text = null;
+                    avtori.Add(author);
+                    satauri.Add(title);
+                    codiwign.Add(isbn);
+                    fasi.Add(price);
+                    sataurisbbox.Text = null;
                     Author_box.Text = null;
-                    textBox1.Text = null;
+                    box1.Text = null;
                     pricebox.Text = null;
                 }
             }
             else
-            {
-
-                int ind = int.Parse(idthing.Text) - 1;
-
-
-                if (Author_box.Text == authori[ind].ToString() && Title_box.Text == Title[ind].ToString() && textBox1.Text == ISBN[ind].ToString() && pricebox.Text == Price[ind].ToString()) MessageBox.Show("not updated");
-
-
-
-
+            {   int ind = int.Parse(idthing.Text) - 1;
+                if (Author_box.Text == avtori[ind].ToString() && sataurisbbox.Text == satauri[ind].ToString() && box1.Text == codiwign[ind].ToString() && pricebox.Text == fasi[ind].ToString()) MessageBox.Show("not updated");
                 else
                 {
-                    MySqlConnection Con = new MySqlConnection(CS);
-
-
-                    MySqlCommand UpdateCommand = new MySqlCommand("UPDATE books SET title = '" + titletb.Text.ToString() + "', author = '" + authortb.Text.ToString() + "', isbn = '" + isbntb.Text.ToString() + "', price = '" + pricetb.Text.ToString() + "' where id = '" + idthing.Text + "' ; ", Con);
-                    MySqlDataReader myReader;
-
+                    MySqlConnection network = new MySqlConnection(library);
+                    MySqlCommand change = new MySqlCommand("UPDATE books SET title = '" + titletb.Text.ToString() + "', author = '" + authortb.Text.ToString() + "', isbn = '" + isbntb.Text.ToString() + "', price = '" + pricetb.Text.ToString() + "' where id = '" + idthing.Text + "' ; ", network);
+                    MySqlDataReader waverider;
                     try
-                    {
-                        Con.Open();
-                        myReader = UpdateCommand.ExecuteReader();
+                    {  network.Open();
+                        waverider = change.ExecuteReader();
+                    
 
-
-                        MessageBox.Show("Your actions have been saved!");
-                        while (myReader.Read())
+                        MessageBox.Show("Dear user it was a success");
+                        while (waverider.Read())
                         {
 
                         }
 
 
-                        Title[ind] = Title_box.Text;
-                        authori[ind] = Author_box.Text;
-                        ISBN[ind] = textBox1.Text;
-                        Price[ind] = pricebox.Text;
-                        Title_box.Text = null;
+                        satauri[ind] = sataurisbbox.Text;
+                        avtori[ind] = Author_box.Text;
+                        codiwign[ind] = box1.Text;
+                        fasi[ind] = pricebox.Text;
+                        sataurisbbox.Text = null;
                         Author_box.Text = null;
-                        textBox1.Text = null;
+                        box1.Text = null;
                         pricebox.Text = null;
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }

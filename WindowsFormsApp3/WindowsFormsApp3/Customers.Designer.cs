@@ -49,6 +49,7 @@
             this.phone_box = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.email_box = new System.Windows.Forms.TextBox();
+            this.idthing = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -234,11 +235,21 @@
             this.email_box.Size = new System.Drawing.Size(338, 22);
             this.email_box.TabIndex = 33;
             // 
+            // invinsibletb
+            // 
+            this.idthing.Enabled = false;
+            this.idthing.Location = new System.Drawing.Point(798, 176);
+            this.idthing.Name = "invinsibletb";
+            this.idthing.Size = new System.Drawing.Size(100, 22);
+            this.idthing.TabIndex = 35;
+            this.idthing.Visible = false;
+            // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 365);
+            this.Controls.Add(this.idthing);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.email_box);
             this.Controls.Add(this.label1);
@@ -291,5 +302,6 @@
         private System.Windows.Forms.TextBox phone_box;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox email_box;
+        private System.Windows.Forms.TextBox idthing;
     }
 }

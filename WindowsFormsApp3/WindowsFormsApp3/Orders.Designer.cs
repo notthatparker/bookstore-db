@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.backbtn_1 = new System.Windows.Forms.Button();
-            this.subbox = new System.Windows.Forms.TextBox();
+            this.subtotalbx = new System.Windows.Forms.TextBox();
             this.taxbox = new System.Windows.Forms.TextBox();
             this.totalbox = new System.Windows.Forms.TextBox();
             this.custbox = new System.Windows.Forms.ComboBox();
@@ -38,7 +38,7 @@
             this.isbnbox = new System.Windows.Forms.TextBox();
             this.pricebox = new System.Windows.Forms.TextBox();
             this.quantbox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listcol = new System.Windows.Forms.DataGridView();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.cancelbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listcol)).BeginInit();
             this.SuspendLayout();
             // 
             // backbtn_1
@@ -62,11 +62,11 @@
             // 
             // subbox
             // 
-            this.subbox.Location = new System.Drawing.Point(261, 352);
-            this.subbox.Name = "subbox";
-            this.subbox.Size = new System.Drawing.Size(131, 22);
-            this.subbox.TabIndex = 5;
-            this.subbox.Text = "sub total";
+            this.subtotalbx.Location = new System.Drawing.Point(261, 352);
+            this.subtotalbx.Name = "subbox";
+            this.subtotalbx.Size = new System.Drawing.Size(131, 22);
+            this.subtotalbx.TabIndex = 5;
+            this.subtotalbx.Text = "sub total";
             // 
             // taxbox
             // 
@@ -141,18 +141,18 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listcol.AllowUserToOrderColumns = true;
+            this.listcol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listcol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Title,
             this.Price,
             this.QTY,
             this.LineTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(261, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 242);
-            this.dataGridView1.TabIndex = 14;
+            this.listcol.Location = new System.Drawing.Point(261, 90);
+            this.listcol.Name = "dataGridView1";
+            this.listcol.RowTemplate.Height = 24;
+            this.listcol.Size = new System.Drawing.Size(443, 242);
+            this.listcol.TabIndex = 14;
             // 
             // Title
             // 
@@ -226,7 +226,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelbutton);
             this.Controls.Add(this.confirmbutton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listcol);
             this.Controls.Add(this.quantbox);
             this.Controls.Add(this.pricebox);
             this.Controls.Add(this.isbnbox);
@@ -235,12 +235,12 @@
             this.Controls.Add(this.custbox);
             this.Controls.Add(this.totalbox);
             this.Controls.Add(this.taxbox);
-            this.Controls.Add(this.subbox);
+            this.Controls.Add(this.subtotalbx);
             this.Controls.Add(this.backbtn_1);
             this.Name = "Orders";
             this.Text = "Orders";
             this.Load += new System.EventHandler(this.Orders_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listcol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +249,7 @@
         #endregion
 
         private System.Windows.Forms.Button backbtn_1;
-        private System.Windows.Forms.TextBox subbox;
+        private System.Windows.Forms.TextBox subtotalbx;
         private System.Windows.Forms.TextBox taxbox;
         private System.Windows.Forms.TextBox totalbox;
         private System.Windows.Forms.ComboBox custbox;
@@ -258,7 +258,7 @@
         private System.Windows.Forms.TextBox isbnbox;
         private System.Windows.Forms.TextBox pricebox;
         private System.Windows.Forms.TextBox quantbox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView listcol;
         private System.Windows.Forms.Button confirmbutton;
         private System.Windows.Forms.Button cancelbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
